@@ -1,0 +1,29 @@
+{
+  "name": "mistpine.ghostty",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Tooling for mistpine.ghostty: generates the Ghostty theme from the mistpine spec, checks it with Ghostty and renders the README images.",
+  "license": "MIT",
+  "type": "module",
+  "packageManager": "pnpm@10.34.9",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "generate": "node scripts/generate.ts",
+    "check": "node scripts/generate.ts --check",
+    "verify": "node scripts/verify.ts",
+    "banner": "node scripts/banner.ts",
+    "render": "node scripts/render.ts",
+    "lint": "biome check .",
+    "format": "biome check --write .",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.6.5",
+    "@types/node": "^26.6.6",
+    "harfbuzzjs": "^1.6.4",
+    "playwright-core": "^1.64.1",
+    "typescript": "^7.0.2"
+  }
+}

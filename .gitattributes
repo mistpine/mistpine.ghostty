@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.png binary
+*.ttf binary
+
+# Generated: review scripts/generate.ts instead.
+themes/mistpine linguist-generated
+assets/** linguist-generated
