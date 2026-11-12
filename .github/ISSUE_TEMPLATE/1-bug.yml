@@ -45,14 +45,3 @@ body:
         - label: I'm using the latest `themes/mistpine` from main.
           required: true
         - label: "`ghostty +validate-config` reports no errors."
-  - type: dropdown
-    id: author
-    attributes:
-      label: Who wrote this issue?
-      description: Issues from agents are welcome; say so, so they can be read with that in mind.
-      options:
-        - A person
-        - An AI agent, reviewed by a person
-        - An AI agent, without human review
-    validations:
-      required: true
