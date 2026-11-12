@@ -1,0 +1,58 @@
+# Filing through the API or `gh issue create`? Forms only apply on the web:
+# write the body with each field's label below as a `### ` heading, in order.
+name: Wrong or broken colors
+description: A color that differs from the spec, unreadable output, or Ghostty rejecting the theme.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        mistpine.ghostty follows the [mistpine spec](https://github.com/mistpine/mistpine/blob/main/docs/spec.md).
+        A color that differs from the spec is a bug here; a spec color you'd like
+        changed belongs in [mistpine](https://github.com/mistpine/mistpine/issues/new/choose).
+        On Ghostty 1.2 or older, the `search-*` keys are unknown: upgrade first.
+  - type: textarea
+    id: what
+    attributes:
+      label: What's wrong
+      description: What you see, where (an ANSI color in a program's output, the cursor, selection, search, splits), and what you expected.
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot
+      description: Drag an image here.
+  - type: textarea
+    id: config
+    attributes:
+      label: Ghostty config
+      description: "Output of `ghostty +show-config --changes-only`, or the lines that touch colors: `theme`, `palette`, `bold-color`, `minimum-contrast`, `palette-generate`, `background-opacity`."
+      render: ini
+  - type: textarea
+    id: versions
+    attributes:
+      label: Versions
+      description: "`ghostty +version`, the OS and desktop, and where the theme file came from (curl, a clone at some commit, Ghostty's bundled themes)."
+      render: text
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I'm using the latest `themes/mistpine` from main.
+          required: true
+        - label: "`ghostty +validate-config` reports no errors."
+  - type: dropdown
+    id: author
+    attributes:
+      label: Who wrote this issue?
+      description: Issues from agents are welcome; say so, so they can be read with that in mind.
+      options:
+        - A person
+        - An AI agent, reviewed by a person
+        - An AI agent, without human review
+    validations:
+      required: true

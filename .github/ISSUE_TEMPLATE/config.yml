@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Change a palette color
+    url: https://github.com/mistpine/mistpine/issues/new?template=1-spec-change.yml
+    about: mistpine.ghostty takes its colors from the mistpine spec. Propose palette changes there.
+  - name: Colors inside Neovim
+    url: https://github.com/mistpine/mistpine.nvim/issues/new/choose
+    about: Syntax and UI colors in Neovim come from mistpine.nvim, not the terminal theme.

@@ -1,0 +1,41 @@
+# Filing through the API or `gh issue create`? Forms only apply on the web:
+# write the body with each field's label below as a `### ` heading, in order.
+name: Ghostty option or feature
+description: A Ghostty color option the theme should set, or a new Ghostty release to support.
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The theme sets colors only. Fonts, opacity, padding, keybindings and
+        window chrome stay in your own config.
+  - type: input
+    id: keys
+    attributes:
+      label: Ghostty config keys
+      placeholder: "selection-foreground, search-selected-background"
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Ghostty version that added them
+      description: A link to the release notes or docs helps.
+  - type: textarea
+    id: why
+    attributes:
+      label: Why
+      description: What looks off without them, and which spec colors you think they should use.
+    validations:
+      required: true
+  - type: dropdown
+    id: author
+    attributes:
+      label: Who wrote this issue?
+      description: Issues from agents are welcome; say so, so they can be read with that in mind.
+      options:
+        - A person
+        - An AI agent, reviewed by a person
+        - An AI agent, without human review
+    validations:
+      required: true
