@@ -5,15 +5,17 @@
  *   pnpm generate --check  fail if themes/mistpine is out of date
  *
  * Every value comes from palette/mistpine.json in the reference repository
- * (see lib/colors.ts). The result is linted against Ghostty's theme rules
+ * (read by @mistpine/port-kit). The result is linted against Ghostty's theme rules
  * and the spec's contrast floor before it is written.
  */
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { contrast, loadSpec, mix, ROOT, type Spec } from "./lib/colors.ts";
+import { contrast, loadSpec, mix, type Spec } from "@mistpine/port-kit";
+
+const ROOT = join(import.meta.dirname, "..");
 
 const check = process.argv.includes("--check");
-const { spec, source } = await loadSpec();
+const { spec, source } = await loadSpec(ROOT);
 
 /** A palette key (`bg1`) or a spec token (`terminal.cursor`, `ui.searchBg`). */
 function color(key: string): string {

@@ -29,6 +29,10 @@ single theme color comes out different from the spec.
 
 Requires Ghostty 1.3 or later (`ghostty +version`).
 
+The spec loader, color math, banner and pixel checks come from
+[@mistpine/port-kit](https://github.com/mistpine/port-kit), shared by every
+mistpine port.
+
 ```sh
 mkdir -p ~/.config/ghostty/themes
 curl -fsSL -o ~/.config/ghostty/themes/mistpine \
@@ -132,5 +136,4 @@ theme.
 
 ## License
 
-[MIT](LICENSE). Outfit and JetBrains Mono (in `scripts/fonts`, for the banner) are under the
-SIL Open Font License 1.1.
+[MIT](LICENSE).

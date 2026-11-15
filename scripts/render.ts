@@ -23,7 +23,9 @@ import { cpSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } fr
 import { homedir } from "node:os";
 import { join } from "node:path";
 import { setTimeout as sleep } from "node:timers/promises";
-import { contrast, ROOT } from "./lib/colors.ts";
+import { contrast } from "@mistpine/port-kit";
+
+const ROOT = join(import.meta.dirname, "..");
 
 const GHOSTTY = process.env.GHOSTTY ?? "ghostty";
 const RENDER = join(ROOT, "scripts", "render");
