@@ -12,7 +12,9 @@ import { execFileSync, spawnSync } from "node:child_process";
 import { copyFileSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { loadSpec, ROOT } from "./lib/colors.ts";
+import { loadSpec } from "@mistpine/port-kit";
+
+const ROOT = join(import.meta.dirname, "..");
 
 const GHOSTTY = process.env.GHOSTTY ?? "ghostty";
 const THEME = join(ROOT, "themes", "mistpine");
@@ -77,7 +79,7 @@ try {
   console.log(`+show-config: all ${theme.size} theme colors in effect`);
 
   // The theme against the spec, independently of the generator.
-  const { spec } = await loadSpec();
+  const { spec } = await loadSpec(ROOT);
   const t = spec.terminal;
   const expected: Record<string, string | undefined> = {
     background: t.background?.hex,

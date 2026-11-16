@@ -1,0 +1,19 @@
+version: 2
+updates:
+  # @mistpine/port-kit and its reusable workflow; other updates are by hand.
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    allow:
+      - dependency-name: "@mistpine/port-kit"
+    commit-message:
+      prefix: build
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    allow:
+      - dependency-name: "mistpine/port-kit*"
+    commit-message:
+      prefix: ci
